@@ -19,7 +19,7 @@ module.exports = {
   
   'GET /signin': async (ctx) => {
     ctx.response.type = 'html';
-    if (ctx.cookies.get('cid') !== 'null') {
+    if (ctx.cookies.get('cid') && ctx.cookies.get('cid') !== 'null') {
       ctx.response.redirect('/index');
     } else {
       ctx.response.body = fs.createReadStream(__dirname + '/../static/html/signin.html');

@@ -1,6 +1,6 @@
 $(function () {
   // initialize the navbar: logout or login
-  if ($.cookie('cid') !== "null") {
+  if ($.cookie('cid') && $.cookie('cid') !== "null") {
     addLogoutBtn();
     $('#logout').click(function () {
       $.cookie('cid', null);
